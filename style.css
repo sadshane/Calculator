@@ -12,6 +12,7 @@ nav {
     height: 5vh;
     font-family: 'Russo One', sans-serif;
     font-size: 32px;
+    padding: 5px 16px;
 }
 
 .calculator {
@@ -31,11 +32,12 @@ nav {
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    padding: 20px;
+    padding: 30px 25px;
 }
 
 .screen {
     background-color: #FFE17B;
+    border: 1px solid rgb(67, 64, 64);
     font-family: 'Archivo', sans-serif;
     font-size: 30px;
     border-radius: 20px;
@@ -46,7 +48,7 @@ nav {
 
 .input, 
 .answer {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 50%;
     padding: 20px 10px;
     border-radius: 20px;
@@ -55,6 +57,7 @@ nav {
 
 .keypad {
     background-color: #FFE17B;
+    border: 1px solid rgb(67, 64, 64);
     border-radius: 20px;
     width: 100%;
     flex: 2.8;
@@ -83,6 +86,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s;
+}
+
+.key:hover {
+    cursor: pointer;
+    transform: scale(1.03);
 }
 
 .key.key0 {
