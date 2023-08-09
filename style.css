@@ -39,7 +39,7 @@ nav {
     background-color: #FFE17B;
     border: 1px solid rgb(67, 64, 64);
     font-family: 'Archivo', sans-serif;
-    font-size: 30px;
+    font-size: 40px;
     border-radius: 20px;
     width: 100%;
     padding: 5px;
@@ -99,6 +99,6 @@ nav {
 }
 
 .key.del, 
-.key.AC {
+.key.clear {
     flex: 1.515;
 }
