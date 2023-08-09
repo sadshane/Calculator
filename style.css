@@ -92,6 +92,12 @@ nav {
 .key:hover {
     cursor: pointer;
     transform: scale(1.03);
+    background-color: #ff911c;
+}
+
+.key:active {
+    transform: scale(0.9);
+    background-color: #FD8D14;
 }
 
 .key.key0 {
