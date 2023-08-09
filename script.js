@@ -2,39 +2,50 @@ console.log('Shania Claire');
 
 function getInputs() {
     let keys = document.querySelectorAll('.key')
-    let input = document.querySelector('.answer');
+    let bottomScreen = document.querySelector('.answer');
+    let upperScreen = document.querySelector('.input');
     keys.forEach(key => {
         key.addEventListener('click', () => {
-            checkInput(input, key);
+            checkInput(bottomScreen, key, upperScreen);
         });
     })
 }
 
-function checkInput(input, key) {
-    if (key.textContent === 'AC')
+function checkInput(bottomScreen, key, upperScreen) {
+    let character = key.textContent;
+    let bottomText = bottomScreen.textContent;  
+    let operators = ['+', '-', '÷', '×', 'Del', 'AC', '='];
+    
+    if (operators.includes(character, bottomScreen))
     {
-        input.textContent = 0;
-        return;
+        checkOperator(character, bottomScreen);
+    }   
+    else if (+bottomText === 0)
+    {
+        bottomScreen.textContent = character;
     }
-    if (!Number.isInteger(+key.textContent))
+    else
     {
-        console.log("not ints");
+        bottomScreen.textContent = bottomText + character;
     }
-    if (key.textContent === 'Del' && input.textContent.length === 1)
+}
+
+function checkOperator(char, bottomScreen) {
+    let bottomText = bottomScreen.textContent;
+    switch (char)
     {
-        input.textContent = 0;
-    }
-    else if (input.textContent === '0' && input.textContent.length === 1)
-    {
-        input.textContent = key.textContent;
-    }
-    else if (key.textContent === 'Del')
-    {
-        input.textContent = input.textContent.slice(0, -1);
-    }
-    else 
-    {
-        input.textContent = input.textContent + key.textContent;
+        case '+':
+            bottomScreen.textContent = `${bottomText} + `;
+            break;
+        case '-':
+            bottomScreen.textContent = `${bottomText} - `;
+            break;
+        case '×':
+            bottomScreen.textContent = `${bottomText} × `;
+            break;
+        case '÷':
+            bottomScreen.textContent = `${bottomText} ÷ `;
+            break;
     }
 }
 
